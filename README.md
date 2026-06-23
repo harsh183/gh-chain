@@ -9,13 +9,6 @@ Quite similar to other `gh` CLI [extensions](https://cli.github.com/manual/gh_ex
 $ gh extension install harsh183/gh-chain
 ```
 
-## Install
-
-Quite similar to other `gh` CLI [extensions](https://cli.github.com/manual/gh_extension_install):
-```sh
-$ gh extension install harsh183/gh-chain
-```
-
 ## Commands
 
 1. `$ gh chain` - Stack a new `gh pr create` without having to track the previous PR
