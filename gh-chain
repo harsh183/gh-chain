@@ -31,7 +31,7 @@ fi
 
 base=$(detect_base)
 if [ -n "$base" ]; then
-    echo "Base: $base"
+    echo "Stack base: $base"
     exec gh pr create -B "$base" "$@"
 else
     exec gh pr create "$@"
