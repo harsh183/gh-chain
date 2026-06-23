@@ -1,6 +1,6 @@
 # `gh chain`
 
-Don't know when you get off the `gh stack` [waitlist](https://github.github.com/gh-stack/) but still want some easy UX around stacking? A few lines of bash is all you need: [gh-chain](/gh_chain)
+Don't know when you get off the `gh stack` [waitlist](https://github.github.com/gh-stack/) but still want some easy UX around stacking? A few lines of bash is all you need: [gh-chain](/gh-chain)
 
 ## Install
 
