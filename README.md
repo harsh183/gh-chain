@@ -21,6 +21,11 @@ $ gh extension install harsh183/gh-chain
   - `gh chain` with the above steps
   - Need a real branch name, more granular adding, or multiple commits? Use `gh chain` similar to example 3.
 
+If you want to save some keystrokes, try out these aliases
+```sh
+$ gh alias set c 'chain'
+$ gh alias set cq 'chain quick'
+```
 ## Example
 
 Let us dogfood this very script to show how it works
