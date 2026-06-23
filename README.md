@@ -41,7 +41,7 @@ https://github.com/harsh183/gh-chain/pull/1
 ```
 
 2. Now let me make a small change and stack
-```
+```sh
 gh-chain (quick/20260622221236|✔) $ vim gh-chain
 gh-chain (quick/20260622221236|✚1) $ gh chain q "make number larger"
 Switched to a new branch 'quick/20260622221349'
@@ -64,7 +64,7 @@ https://github.com/harsh183/gh-chain/pull/2
 ```
 
 3. But I don't always want to be quick, sometimes i want to name my branch, have multiple commits and still have nice UX.
-```
+```sh
 gh-chain (quick/20260622221349|✔) $ vim gh-chain
 gh-chain (quick/20260622221349|✚1) $ git checkout -b hd/add_better_print
 Switched to a new branch 'hd/add_better_print'
@@ -90,7 +90,7 @@ https://github.com/harsh183/gh-chain/pull/3
 ```
 
 4. Then I did the same for this README.md once I was done
-```
+```sh
 $ vim README.md
 gh-chain (hd/add_better_print|✔) $ git status
 On branch hd/add_better_print
