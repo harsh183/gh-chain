@@ -8,10 +8,11 @@ Don't know when you get off the `gh stack` [waitlist](https://github.github.com/
   - Identifies the previous branch we branched off
   - passes that into `gh pr create -B`
 2. `$ gh chain q "commit message"` or `$ gh chain quick "commit message"` - For when you just want to stack all uncommited changes as the next layer
-  - `git checkout -b` a placeholder branch with a timestamp
+  - `git checkout -b` a placeholder branch with a timestamp.
   - `git add -A`
   - `git commit -m` with whatever message you pass
-  - `gh chain` with the above
+  - `gh chain` with the above steps
+  - Need a real branch name, more granular adding, or multiple commits? Use `gh chain` similar to example 3.
 
 ## Example
 
