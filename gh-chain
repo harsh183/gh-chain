@@ -1,35 +1,39 @@
-#!/usr/bin/env bash
+#!/bin/sh
 set -e
 
-echo "Hello gh-chain!"
+detect_base() {
+    current=$(git branch --show-current)
+    branches=$(git for-each-ref --format='%(refname:short)' refs/heads/)
+    best=""
+    best_count=999999999 # large number you should not be that ahead on 
 
-# Snippets to help get started:
+    for b in $branches; do
+	    [ "$b" = "$current" ] && continue
+	    count=$(git rev-list --count "$b..$current")
+	    if [ "$count" -lt "$best_count" ]; then
+		    best="$b"
+		    best_count="$count"
+	    fi
+    done
 
-# Determine if an executable is in the PATH
-# if ! type -p ruby >/dev/null; then
-#   echo "Ruby not found on the system" >&2
-#   exit 1
-# fi
+    echo "$best"
+}
 
-# Pass arguments through to another command
-# gh issue list "$@" -R cli/cli
+if [ "$1" = "quick" ] || [ "$1" = "q" ]; then
+    message="$2"
+    shift 2
 
-# Using the gh api command to retrieve and format information
-# QUERY='
-#   query($endCursor: String) {
-#     viewer {
-#       repositories(first: 100, after: $endCursor) {
-#         nodes {
-#           nameWithOwner
-#           stargazerCount
-#         }
-#       }
-#     }
-#   }
-# '
-# TEMPLATE='
-#   {{- range $repo := .data.viewer.repositories.nodes -}}
-#     {{- printf "name: %s - stargazers: %v\n" $repo.nameWithOwner $repo.stargazerCount -}}
-#   {{- end -}}
-# '
-# exec gh api graphql -f query="${QUERY}" --paginate --template="${TEMPLATE}"
+    new_branch="quick/$(date +%Y%m%d%H%M%S)"
+    git checkout -b "$new_branch"
+    git add -A
+    git commit -m "$message"
+fi
+
+base=$(detect_base)
+if [ -n "$base" ]; then
+    echo "Base: $base"
+    exec gh pr create -B "$base" "$@"
+else
+    exec gh pr create "$@"
+fi
+
