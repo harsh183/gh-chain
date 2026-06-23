@@ -5,7 +5,7 @@ detect_base() {
     current=$(git branch --show-current)
     branches=$(git for-each-ref --format='%(refname:short)' refs/heads/)
     best=""
-    best_count=999999999 # large number you should not be that ahead on 
+    best_count=9999999999999999 # large number you should not be that ahead on 
 
     for b in $branches; do
 	    [ "$b" = "$current" ] && continue
