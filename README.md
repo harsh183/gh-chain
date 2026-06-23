@@ -2,6 +2,13 @@
 
 Don't know when you get off the `gh stack` [waitlist](https://github.github.com/gh-stack/) but still want some easy UX around stacking? A few lines of bash is all you need
 
+## Install
+
+Quite similar to other `gh` CLI [extensions](https://cli.github.com/manual/gh_extension_install):
+```sh
+$ gh extension install harsh183/gh-chain
+```
+
 ## Commands
 
 1. `$ gh chain` - Stack a new `gh pr create` without having to track the previous PR
