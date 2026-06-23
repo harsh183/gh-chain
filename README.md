@@ -138,4 +138,12 @@ https://github.com/harsh183/gh-chain/pull/4
 
 <img width="746" height="93" alt="Screenshot 2026-06-22 at 10 33 06 PM" src="https://github.com/user-attachments/assets/8c9e025e-7538-481c-9c26-02186acee170" />
 
+## Is this Serious?
 
+Not very, this doesn't really handle many edge cases or more complex behavior you might want in a large organization, but it more or less hits the simple use case of stacking PRs using `gh` CLI without much work for my use cases. I think my main point is that the core of a stacking workflow is already there with tools we already have, even if it's a clunky execution.
+
+If you're actually interested in this kind of stacking flow, I highly suggest trying out software and flows that's more meant for this: 
+* [Gerrit](https://www.gerritcodereview.com/) - Spun out of Google Android that uses standard `git` commands but your stacked change at `git push origin HEAD:refs/for/<branch_name>` 
+* `jj` [Jujutsu](https://github.com/jj-vcs/jj) - Spun out of Google as well, and even has a `git` backend. Warning, this doesn't support [git lfs](https://github.com/jj-vcs/jj/issues/80), but I would have used this more otherwise since it captures how I think about changes.
+* `sl` [Sapling](https://github.com/facebook/sapling) - Based off Facebook era Phabricator-style stacking that's now open source. Warning, don't use it if you use `sl` for [Steam Locomotive](https://github.com/mtoyoda/sl)
+* `git format-patch` combined with `git send-email` - The original `git` workflow that's still used by Linux and many projects that shows how git has always been aligned with today's stacking workflow.
